@@ -1,4 +1,4 @@
-#455. Assign Cookies
+#455. Assign Cookies.
 
 #Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.
 #Each child i has a greed factor g[i], which is the minimum size of a cookie that the child will be content with; 
