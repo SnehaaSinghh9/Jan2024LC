@@ -5,3 +5,24 @@
 #Two binary trees are considered leaf-similar if their leaf value sequence is the same.
 #Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
+        def constructLeaves (root):
+            arr = []
+            def traverse (node):
+                if node is None:
+                    return
+                traverse (node.left)
+                if node.left is None and node.right is None:
+                    arr.append(node.val)
+                traverse (node.right)
+            traverse(root)
+            return arr
+        return constructLeaves (root1) == constructLeaves (root2)
+
